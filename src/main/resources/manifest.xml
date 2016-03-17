@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="battery1" class="demo.Battery">
+            <constructor-arg name="power" value="3000mA" />
+    </bean>
+    <bean id="simcard1" class="demo.Simcard">
+            <constructor-arg name="number" value="13512345678" />
+    </bean>
+    <bean id="mobile1" class="demo.Mobile">
+            <constructor-arg name="brand" value="Xiaomi" />
+             <property name="Simcard" ref="simcard1"/>
+            <property name="Battery" ref="battery1"/>
+    </bean>
+
+</beans>
